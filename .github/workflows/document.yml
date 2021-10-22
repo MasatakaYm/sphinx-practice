@@ -32,3 +32,12 @@ jobs:
 
       - name: Build documentation
         run: make html
+
+      # Posting to GitHub Pages
+      - name: Deploy GitHub Pages
+        used: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.MY_ACTIONS_DEPLOY_KEY }}
+          publish_dir: ./build/html
+          force_orphan: true
+          commit_message: ${{ github.event.head_commit.message }}
