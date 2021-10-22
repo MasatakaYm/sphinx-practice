@@ -1,0 +1,30 @@
+name: document
+
+on:
+  push:
+    branches:
+      -master
+
+jobs:
+  deploy:
+    runs-on: Ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v1
+        with:
+          python-version: '3.8'
+
+      - name: Display  python version
+      run: python -c "import sys; print(sys.version)"
+
+      - name: Install Sphinx dependencies
+        run: sudo apt-get install python-dev build-essential
+
+      # Note it is better using requirements.txt to install required packages
+      - name: Install Sphinx + requirements via pip
+        run: |
+          pip install sphinx
+          pip install sphinx-rtd-theme
