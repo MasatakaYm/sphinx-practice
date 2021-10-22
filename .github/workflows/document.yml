@@ -18,7 +18,7 @@ jobs:
           python-version: '3.8'
 
       - name: Display python version
-        run: python -c "import sys; print(sys.version)"
+        run: python3 -c "import sys; print(sys.version)"
 
       - name: Install Sphinx dependencies
         run: sudo apt-get install python-dev build-essential
