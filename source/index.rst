@@ -17,6 +17,7 @@ Welcome to sphinx-sample's documentation!
    ./sphinx/install
    ./sphinx/quick-start
    ./sphinx/deploy
+   ./sphinx/figs
 
 
 Indices and tables
