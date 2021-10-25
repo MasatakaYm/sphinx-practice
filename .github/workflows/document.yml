@@ -25,10 +25,7 @@ jobs:
 
       # Note it is better using requirements.txt to install required packages
       - name: Install Sphinx + requirements via pip
-        run: |
-          pip install sphinx
-          pip install sphinx-rtd-theme
-          pip install myst_parser
+        run: pip install -r requirements.txt
 
       - name: Build documentation
         run: make html
