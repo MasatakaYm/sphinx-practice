@@ -165,7 +165,7 @@ pandoc -f markdown -t rst -o ../main.rst  main.md
 ネットで調べると`recommonmark`を使うことで, `Markdown`を使うことができるようになるとあるが、公式によると`CommonMark`はもうサポートされていないため
 
 ```sh
-$ make htm
+$ make html
 WARNING: 拡張機能のセットアップ中 recommonmark: 拡張 'recommonmark' には setup() 関数がありません。これは本当にSphinx拡張ですか？
 ```
 のようなエラーが出力されて、うまくいかない。
