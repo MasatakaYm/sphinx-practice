@@ -58,6 +58,37 @@ https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-language �
 
 4 directories, 4 files
 ```
+
+## 文章の作成
+ドキュメントファイル(`.rst`や`.md`)は`source`以下に配置する。サブディレクトリを作ってその中に整理することもできる。`index.rst`は目次となるページで
+```
+Welcome to sphinx-sample's documentation!
+=========================================
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Contents:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Sphinx:
+
+   ./sphinx/install
+   ./sphinx/quick-start
+   ./sphinx/deploy
+   ./sphinx/figs
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+```
+のようなファイルになっている。` toctree::`の下にディレクトリ+ファイル名(拡張子は省く)を並べることで、文章をインクルードすることができる。
+
+
 ## 文章のビルド
 
 ### htmlの作成
@@ -66,22 +97,22 @@ https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-language �
 ```
 $ make html
 ```
-とすると、`build/html`にHTMLページが作成される.
+とすると、`build/html`にHTMLページが作成される。
 
 ### pdfの作成
 プロジェクトのホームディレクトリ以下で
 ```
 $ make latexpdf
 ```
-を実行すると、`build/latex`以下にpdfが作成される.
+を実行すると、`build/latex`以下にpdfが作成される。
 
 ## テーマの変更
-テーマをpipでインストールして, `source/conf.py`を書き換える
+テーマをpipでインストールして、 `source/conf.py`を書き換える
 ```
 $ pip install sphinx-rtd-theme
 ```
 
-`source/conf.py`を以下のように変更する.
+`source/conf.py`を以下のように変更する。
 ```
 extensions = [
     'sphinx.ext.autodoc',
@@ -94,7 +125,7 @@ extensions = [
 html_theme = 'sphinx_rtd_theme'
 ```
 
-その後, htmlを生成する
+その後、htmlを生成する
 ```
 $ make html
 ```
