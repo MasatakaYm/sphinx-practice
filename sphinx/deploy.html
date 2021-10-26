@@ -1,0 +1,296 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Sphinxで作成したページをデプロイする &mdash; sphinx-sample 1.0.0 ドキュメント</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="next" title="Figureを貼り付ける" href="figs.html" />
+    <link rel="prev" title="Sphinxプロジェクトを始める" href="quick-start.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> sphinx-sample
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Sphinx:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Sphinxのインストール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick-start.html">Sphinxプロジェクトを始める</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Sphinxで作成したページをデプロイする</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#deploy-keys-secrets">Deploy keys &amp; Secretsを登録する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#github-pages">GitHub Pagesの設定</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#workflows">workflowsの作成</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="figs.html">Figureを貼り付ける</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">sphinx-sample</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Sphinxで作成したページをデプロイする</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/sphinx/deploy.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="tex2jax_ignore mathjax_ignore section" id="sphinx">
+<h1>Sphinxで作成したページをデプロイする<a class="headerlink" href="#sphinx" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://sphinx-users.jp/cookbook/hosting/index.html#heroku-basic">Sphinx-Users.jp: Sphinxで作ったドキュメントのホスティング</a></p></li>
+<li><p><a class="reference external" href="https://sphinx-users.jp/cookbook/githubaction/index.html">Sphinx-Users.jp: GitHub Actionsを用いてGitHub Pagesへのデプロイを自動化する</a></p></li>
+<li><p><a class="reference external" href="https://qiita.com/kinpira/items/505bccacb2fba89c0ff0">Qiita: sphinxでドキュメント作成からWeb公開までをやってみた</a></p></li>
+<li><p><a class="reference external" href="https://coderefinery.github.io/sphinx-lesson/gh-action/">Sphinx-lesson: Deployment with Github Actions</a></p></li>
+</ul>
+<div class="section" id="deploy-keys-secrets">
+<h2>Deploy keys &amp; Secretsを登録する<a class="headerlink" href="#deploy-keys-secrets" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>まず公開鍵と秘密鍵のペアを生成する</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ ssh-keygen -t ed25519 -C <span class="s2">&quot;</span><span class="k">$(</span>git config use.email<span class="k">)</span><span class="s2">&quot;</span> -f github-deploy-key-ed25519 -N <span class="s2">&quot;&quot;</span>
+</pre></div>
+</div>
+<p>次に公開鍵と、秘密鍵を登録する。</p>
+<ul class="simple">
+<li><p>公開鍵は、プロジェクトページの<code class="docutils literal notranslate"><span class="pre">Settings</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Deploy</span> <span class="pre">Keys</span></code>の<code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">deploy</span> <span class="pre">key</span></code>で登録する。</p></li>
+<li><p>秘密鍵は、プロジェクトページの<code class="docutils literal notranslate"><span class="pre">Settings</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Secrets</span></code>の<code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">a</span> <span class="pre">new</span> <span class="pre">secret</span></code>で登録する。Secretは<code class="docutils literal notranslate"><span class="pre">MNY_ACTIONS_DEPLOY_KEY</span></code>という名前で登録する。</p></li>
+</ul>
+</div>
+<div class="section" id="github-pages">
+<h2>GitHub Pagesの設定<a class="headerlink" href="#github-pages" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Settings</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">GitHub</span> <span class="pre">Pages</span></code>でGitHub Pagesの設定をする.</p>
+<p><strong>source</strong>の項目を<code class="docutils literal notranslate"><span class="pre">gh-pages</span></code>の/root以下に設定すると、GitHub Pagesの成果物が<code class="docutils literal notranslate"><span class="pre">gh-pages</span></code>ブランチのルートディレクトリ以下に作成されるようになる。これらを変更することも可能である。</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site">詳しくはこちらのページ</a></p></li>
+</ul>
+</div>
+<div class="section" id="workflows">
+<h2>workflowsの作成<a class="headerlink" href="#workflows" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">.github/workflows/</span></code>に<code class="docutils literal notranslate"><span class="pre">document.yml</span></code>を作成する.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>name: document
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: Ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v1
+        with:
+          python-version: &#39;3.8&#39;
+
+      - name: Display python version
+        run: python3 -c &quot;import sys; print(sys.version)&quot;
+
+      - name: Install Sphinx dependencies
+        run: sudo apt-get install python-dev build-essential
+
+      # Note: it is better using requirements.txt to install required packages
+      - name: Install Sphinx + requirements via pip
+        run: |
+          pip install sphinx
+          pip install sphinx-rtd-theme
+          pip install myst_parser
+
+      - name: Build documentation
+        run: make html
+
+      # Posting to GitHub Pages
+      - name: Deploy GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.MY_ACTIONS_DEPLOY_KEY }}
+          publish_dir: ./build/html
+          force_orphan: true
+          commit_message: ${{ github.event.head_commit.message }}
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="figs.html" class="btn btn-neutral float-right" title="Figureを貼り付ける" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="quick-start.html" class="btn btn-neutral float-left" title="Sphinxプロジェクトを始める" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Masataka Yamauchi.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
